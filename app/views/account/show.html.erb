@@ -1,0 +1,15 @@
+<h1>Your Public GitHub Account Information</h1>
+
+<%= image_tag @account[:avatar] %><br>
+Your GitHub link:
+<%= link_to @account[:profile_link], @account[:profile_link] %> <br>
+
+<% @account[:user].each do |key, value| %>
+  <% if !value.blank? %>
+    <%= key %> : <%= value %> <br>
+  <% end %>
+<% end %>
+<br>
+
+
+<%= link_to "Logout", logout_path %>
