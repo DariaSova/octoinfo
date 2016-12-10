@@ -6,6 +6,6 @@ class PagesController < ApplicationController
   end
 
   def user_account
-    render html: "Hey! this is yor account!"
+    render template: 'user_account'
   end
 end
