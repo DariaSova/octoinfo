@@ -9,3 +9,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+#Ignore credentials file
+.env
