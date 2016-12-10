@@ -4,7 +4,9 @@ class SessionController < ApplicationController
   def create
     user = User.find_or_create_by(provider: auth_hash[:provider], uid: auth_hash[:uid], name: auth_user_name)
     session[:user_id] = user.id unless !user.save
-    render template: 'user_account', locals: { resources: auth_hash["extra"]["raw_info"] }
+    hash =  auth_hash["extra"]["raw_info"] }
+
+    redirect_to controller: 'account', action: 'show', account: hash
   end
 
   def destroy
