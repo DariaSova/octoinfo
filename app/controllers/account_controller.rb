@@ -1,4 +1,6 @@
 class AccountController < ApplicationController
+  before_filter :authenticate
+
   def show
     @account = get_public_information
   end
