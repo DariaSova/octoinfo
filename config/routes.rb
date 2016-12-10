@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'session/create'
+  get 'auth/github', as: 'github_auth'
+  get 'auth/:provider/callback', to: 'session#create'
+  get '/auth/failure', to: 'pages#home'
 
-  get 'session/destroy'
+  get 'logout', to: 'session#destroy'
 
-  root "pages#home"
+  root 'pages#home'
 end
