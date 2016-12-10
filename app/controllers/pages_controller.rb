@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
 
   def home
-    render html: "Hello, World! Welcome!"
+    render template: 'home'
+  end
+
+  def user_account
+    render html: "Hey! this is yor account!"
   end
 end
