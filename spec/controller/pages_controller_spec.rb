@@ -5,7 +5,9 @@ RSpec.describe PagesController, type: :controller do
     subject { get :home }
 
     specify { expect(subject.status).to eq 200 }
-    it { is_expected.to render_template :home }
 
+    it 'should render home page' do
+      expect(subject).to render_template(:home)
+    end
   end
 end
