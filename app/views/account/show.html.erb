@@ -17,7 +17,11 @@
               <strong><%= key %>:</strong>
             </td>
             <td>
-              <%= value %>
+              <% if key.eql? 'created_at' %>
+                <%= DateTime.parse(value).strftime("%m/%d/%Y") %>
+              <%else%>
+                <%= value %>
+              <% end %>
             </td>
           </tr>
         <% end %>
