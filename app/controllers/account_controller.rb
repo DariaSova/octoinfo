@@ -3,7 +3,6 @@ class AccountController < ApplicationController
 
   def show
     @account = get_public_information
-    binding.pry
   end
 
   private 
@@ -12,7 +11,7 @@ class AccountController < ApplicationController
   end
 
   def get_public_information
-    account = { user: user_information, avatar: @user.avatar_url, profile_link: @user.html_url }
+    account = { user: user_information, avatar: user_avatar, profile_link: account_link }
   end
 
   def user_information
@@ -20,5 +19,13 @@ class AccountController < ApplicationController
     res = @user.map { | key, value | [ key, value ] unless key.to_s.include? 'url' or key.to_s.in? unwanted }
 
     res.compact.to_h
+  end
+
+  def user_avatar
+    @user.avatar_url
+  end
+
+  def account_link
+    @user.html_url
   end
 end
