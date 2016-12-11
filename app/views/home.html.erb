@@ -1,22 +1,22 @@
 <% if logged_in? %>
-  <%= link_to "Logout", logout_path %><br>
+  <%= link_to 'Logout', logout_path, class: 'logout-link' %><br>
 <% end %>
 
 <h1> Login with your GitHub account to see how your profile looks like!</h1>
 <br>
-<h3>Hey there!</h3><br><br>
+<h3>Hey there!</h3><br>
 
 <p>
 <h3 >Ever wondered what other people can see on your GitHub page?
   Then you are on the right page!<h3>
     <h3>Login with your GitHub account below and see your public Github information! :)</h3>
 </p>
-
+<br>
 <% if !logged_in? %>
-  <%= link_to "Login", github_auth_path %><br>
+  <%= link_to 'Login Here', github_auth_path, class: 'btn btn-info center-block login-link' %><br>
 <% else %>
   <h2>Looks like you're already logged in!</h2>
-  <%= link_to "Your Github Account", github_account_information_path %><br>
+  <%= link_to '> Your Github Account', github_account_information_path, class: 'btn btn-danger' %><br>
 <% end %>
 
-<%= image_tag('octodjcat.gif', class: 'img-responsive center-block') %><br>
+<%= image_tag('octodjcat.gif', class: 'img-responsive center-block octocat-image') %><br>

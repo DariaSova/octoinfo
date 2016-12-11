@@ -1,24 +1,28 @@
-<%= link_to "Logout", logout_path %>
+<%= link_to 'Logout', logout_path, class: 'btn btn-link logout-link' %>
 <h1>Your Public GitHub Account Information</h1><br>
 
-<%= image_tag @account[:avatar] %><br>
+<div class='avatar'>
+  <%= image_tag @account[:avatar], class: 'avatar-picture' %><br>
+  <h4>Your GitHub link:
+    <%= link_to @account[:profile_link], @account[:profile_link] %></h4><br>
+</div>
 
-<h4>Your GitHub link:
-<%= link_to @account[:profile_link], @account[:profile_link] %></h4><br>
-<table class="table table-striped">
-  <tbody>
-    <% @account[:user].each do |key, value| %>
-      <% if !value.blank? %>
-        <tr>
-          <td>
-          <%= key %> :
-          </td>
-          <td>
-          <%= value %>
-          </td>
-        </tr>
+<div class='table-info'>
+  <table class="table table-striped">
+    <tbody>
+      <% @account[:user].each do |key, value| %>
+        <% if !value.blank? %>
+          <tr>
+            <td>
+              <strong><%= key %>:</strong>
+            </td>
+            <td>
+              <%= value %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
-<br>
+    </tbody>
+  </table>
+  </table
+</div>
