@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   get 'logout', to: 'session#destroy'
 
+  get '*unmatched_route', to: 'application#not_found'
   root 'pages#home'
 end

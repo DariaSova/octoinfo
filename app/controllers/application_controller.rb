@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!session[:user_id]
   end
+
+  def not_found
+    render template: '404'
+  end
 end
