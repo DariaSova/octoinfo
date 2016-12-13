@@ -71,6 +71,11 @@ RSpec.describe SessionController, type: :controller do
       session[:session_token].should be_nil
     end
 
+    it "should display flash success" do
+      subject
+      expect(flash[:success]).to be_present
+    end
+
     it "should redirect to the home page" do
       subject
       response.should redirect_to root_url
