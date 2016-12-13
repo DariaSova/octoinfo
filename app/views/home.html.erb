@@ -1,6 +1,9 @@
 <% if logged_in? %>
   <%= link_to 'Logout', logout_path, class: 'logout-link' %><br>
 <% end %>
+<% if flash[:error] %>
+  <%= flash[:error] %>
+<% end %>
 
 <h1> Login with your GitHub account to see how your profile looks like!</h1>
 <br>

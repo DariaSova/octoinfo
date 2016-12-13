@@ -2,12 +2,16 @@ class SessionController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def create
-    user = User.find_or_create_by(provider: auth_hash[:provider], uid: auth_hash[:uid], name: auth_user_name)
-    session[:user_id] = user.id unless !user.save
-    session[:session_token] = session_token
-    hash = user_info
+    user = User.find_or_create_by(provider: auth_hash[:provider], uid: auth_hash[:uid], name: auth_user_name) unless !auth_hash
+      if user && user.save
+        session[:user_id] = user.id
+        session[:session_token] = session_token
+        hash = user_info
+        redirect_to controller: 'account', action: 'show', account: hash and return
+      end
 
-    redirect_to controller: 'account', action: 'show', account: hash
+    flash[:error] = 'Ooops something went wrong..try again!'
+    redirect_to root_path
   end
 
   def destroy
