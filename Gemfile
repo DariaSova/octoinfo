@@ -8,7 +8,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 
 #octokit
-gem "octokit", "~> 4.0"
+gem 'octokit', '~> 4.0'
 #database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -21,6 +21,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+# twitter bootstrap
+gem 'twitter-bootstrap-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
