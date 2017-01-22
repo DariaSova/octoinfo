@@ -36,4 +36,12 @@ RSpec.describe ApplicationController, type: :controller do
       end
     end
   end
+
+    describe '#not_found' do
+
+      it 'should render custom 404 page' do
+        get '/someDummy/url'
+        expect(response).to render_template('404')
+      end
+    end 
 end
