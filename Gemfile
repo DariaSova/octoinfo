@@ -10,7 +10,7 @@ gem 'omniauth-github'
 #octokit
 gem 'octokit', '~> 4.0'
 #database
-gem 'pg'
+gem 'pg', '~> 0.18'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use SCSS for stylesheets
